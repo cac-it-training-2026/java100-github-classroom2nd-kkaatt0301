@@ -19,30 +19,58 @@
 
 package lesson07.challenge15;
 
-
 //ここにIChiefTreasurerインターフェースを記述
-
+interface IChiefTreasurer {
+	public void figure();
+}
 
 //ここにICelebrityインターフェースを記述
-
+interface ICelebrity {
+	public void learn();
+}
 
 //ここにIChiefRetainerインターフェースを記述
-
+interface IChiefRetainer extends IChiefTreasurer, ICelebrity {
+	public void stay();
+}
 
 //ここにSamuraiクラスを記述
+class Samurai implements IChiefRetainer {
+	public void figure() {
+	};
 
+	public void learn() {
+	};
+
+	public void stay() {
+	};
+}
 
 //ここにRetainerクラスを記述
+class Retainer implements IChiefRetainer {
+	public void figure() {
+		System.out.println("藩の資産を計算するよ～。");
+	};
 
+	public void learn() {
+		System.out.println("茶道を嗜むよ～。");
+	};
+
+	public void stay() {
+		System.out.println("城で留守番するよ～。");
+	};
+}
 
 public class CastleTown {
 
-    public static void main(String[] args) {
-        System.out.println("藩士1：");
+	public static void main(String[] args) {
+		System.out.println("藩士1：");
 
+		//ここに適切な処理を記述;
+		Retainer retainer = new Retainer();
+		retainer.figure();
+		retainer.learn();
+		retainer.stay();
 
-        //ここに適切な処理を記述;
-
-
-    }
+	}
 }
