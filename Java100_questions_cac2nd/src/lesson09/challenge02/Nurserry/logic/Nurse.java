@@ -1,25 +1,28 @@
 package lesson09.challenge02.Nurserry.logic;
 
 public class Nurse {
-    private String name;
+	private String name;
 
-    public Nurse(String name) {
-        this.name = name;
-    }
+	public Nurse(String name) {
+		this.name = name;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void divide(int cakes, int childs) {
+	public void divide(int cakes, int childs) {
 
+		//ここに適切な処理を記述
+		try {
+			int result = cakes / childs;
+		} catch (ArithmeticException e) {
+			System.out.print("ケーキを食べる園児がいません。");
+		}
 
-        //ここに適切な処理を記述
-
-
-    }
+	}
 }
