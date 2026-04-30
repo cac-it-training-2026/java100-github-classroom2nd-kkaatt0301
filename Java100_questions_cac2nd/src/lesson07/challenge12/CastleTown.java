@@ -18,28 +18,39 @@
 
 package lesson07.challenge12;
 
-
 //ここにIChiefTreasurerインターフェースを記述
-
+interface IChiefTreasurer {
+	public void figure();
+}
 
 //ここにSamuraiクラスを記述
-
+abstract class Samurai {
+	abstract void work();
+}
 
 //ここにRetainerクラスを記述
-
+class Retainer extends Samurai {
+	void work() {
+		System.out.println("年貢を取り立てるよ～。");
+	}
+}
 
 //ここにMagistrateクラスを記述
-
+class Magistrate implements IChiefTreasurer {
+	public void figure() {
+		System.out.println("藩の資産を計算するよ～。\n");
+	};
+}
 
 public class CastleTown {
 
-    public static void main(String[] args) {
-        System.out.println("奉行に勘定奉行を兼ねてもらうことになりました。\n");
+	public static void main(String[] args) {
+		System.out.println("奉行に勘定奉行を兼ねてもらうことになりました。\n");
 
-        System.out.println("奉行1：");
+		System.out.println("奉行1：");
 
-
-        //ここに適切な処理を記述
-
-    }
+		//ここに適切な処理を記述
+		Magistrate magistrate1 = new Magistrate();
+		magistrate1.figure();
+	}
 }

@@ -42,9 +42,13 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
 		//ここに配列の宣言および値の代入処理を記述する（for文）
+		int[] a = new int[5];
 
+		for (int i = 0; i < a.length; i++) {
+			int r = (int) (Math.random() * 5) + 1;
+			a[i] = r;
+		}
 
 		System.out.println("E主任：");
 		System.out.println("AB興産の荷物の検査結果を教えてください。\n");
@@ -52,13 +56,17 @@ public class WarehouseManager {
 		System.out.println("Yさん：");
 		System.out.println("はい、");
 
-		boolean hitFlag = false;
-
+		boolean Flag = false;
 
 		//ここに要素の確認および何袋目かの出力処理を記述する
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] == 5) {
+				System.out.println((i + 1) + "袋目");
+				Flag = true;
+			}
+		}
 
-
-		if (hitFlag) {
+		if (Flag) {
 			System.out.println("に入っていました。");
 		} else {
 			System.out.println("入っていませんでした。");
