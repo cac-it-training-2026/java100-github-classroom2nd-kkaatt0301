@@ -57,8 +57,8 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-		int[] MQArrayA = { 3, 0, 5, 0, 3 };
-		int[] MQArrayB = { 0, 1, 0, 4, 0 };
+		int[] Array_A = { 3, 0, 5, 0, 3 };
+		int[] Array_B = { 0, 1, 0, 4, 0 };
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送の件、お願いします。\n");
@@ -67,40 +67,50 @@ public class WarehouseManager {
 		System.out.println("はい、まずは現状から確認いたします。\n");
 
 		System.out.print("A...");
-		for (int i = 0; i < MQArrayA.length; i++) {
-			System.out.print(MQArrayA[i]);
-			if (i != (MQArrayA.length - 1)) {
+		for (int i = 0; i < Array_A.length; i++) {
+			System.out.print(Array_A[i]);
+			if (i != (Array_A.length - 1)) {
 				System.out.print(",");
 			}
 		}
 		System.out.print("\n\nB...");
-		for (int i = 0; i < MQArrayB.length; i++) {
-			System.out.print(MQArrayB[i]);
-			if (i != (MQArrayB.length - 1)) {
+		for (int i = 0; i < Array_B.length; i++) {
+			System.out.print(Array_B[i]);
+			if (i != (Array_B.length - 1)) {
 				System.out.print(",");
 			}
 		}
 
 		System.out.println("\n\nでした。直してきます...\n");
 
-
 		//for文のネストを利用してMQArrayAの要素0の位置にMQArrayBの値を入れる処理を記述する。
 
+		for (int i = 0; i < Array_A.length; i++) {
+			if (i == 1 || i == 3) {
+				for (int j = 0; j < Array_B.length; j++) {
+					if (Array_B[j] != 0) {
+						Array_A[i] = Array_B[j];
+						Array_B[j] = 0;
+						break;
+					}
+				}
+			}
+		}
 
 		System.out.println("Yさん：");
 		System.out.println("直してきました。\n");
 
 		System.out.print("A...");
-		for (int i = 0; i < MQArrayA.length; i++) {
-			System.out.print(MQArrayA[i]);
-			if (i != (MQArrayA.length - 1)) {
+		for (int i = 0; i < Array_A.length; i++) {
+			System.out.print(Array_A[i]);
+			if (i != (Array_A.length - 1)) {
 				System.out.print(",");
 			}
 		}
 		System.out.print("\n\nB...");
-		for (int i = 0; i < MQArrayB.length; i++) {
-			System.out.print(MQArrayB[i]);
-			if (i != (MQArrayB.length - 1)) {
+		for (int i = 0; i < Array_B.length; i++) {
+			System.out.print(Array_B[i]);
+			if (i != (Array_B.length - 1)) {
 				System.out.print(",");
 			}
 		}
